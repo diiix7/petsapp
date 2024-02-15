@@ -32,7 +32,7 @@ const Landing = (props) => {
         color={"success"}
         onPress={handleContinue}
         //disabled={}
-        title={"CONTINUE"}
+        title={"GET STARTED"}
       />
     </View>
   );

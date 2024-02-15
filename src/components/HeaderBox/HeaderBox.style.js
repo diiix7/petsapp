@@ -38,5 +38,17 @@ const HeaderBoxStyle = StyleSheet.create({
     width: wp("75"),
     fontSize: 16,
   },
+  headerboxline22: {
+    top: 80,
+    alignSelf: "center",
+  },
+  headerboxline22txt: {
+    fontSize: 28,
+  },
+  headerboxline22txt2: {
+    fontSize: 20,
+    textAlign: "center",
+    top: 10,
+  },
 });
 export default HeaderBoxStyle;

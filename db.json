@@ -1,0 +1,49 @@
+{
+    "data": [
+    {
+        "id": 1,
+        "name": "Chihuahua",
+        "image": "https://picsum.photos/id/1/200/300"
+      },
+      {
+        "id": 2,
+        "name": "PitBull",
+        "image": "https://picsum.photos/id/237/200/300"
+      },
+      {
+        "id": 3,
+        "name": "Local",
+        "image": "https://picsum.photos/seed/picsum/200/300"
+      },
+      {
+        "id": 4,
+        "name": "BoerBull",
+        "image": "https://picsum.photos/200/300?grayscale"
+      },
+      {
+        "id": 5,
+        "name": "Chihuahua",
+        "image": "https://picsum.photos/id/1/200/300"
+      },
+      {
+        "id": 6,
+        "name": "PitBull",
+        "image": "https://picsum.photos/id/237/200/300"
+      },
+      {
+        "id": 7,
+        "name": "Local",
+        "image": "https://picsum.photos/seed/picsum/200/300"
+      },
+      {
+        "id": 8,
+        "name": "BoerBull",
+        "image": "https://picsum.photos/200/300?grayscale"
+      },
+      {
+        "id": 9,
+        "name": "Chihuahua",
+        "image": "https://picsum.photos/id/1/200/300"
+      }]
+  }
+  

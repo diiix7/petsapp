@@ -11,6 +11,7 @@ import Wishlist from "./src/screens/Wishlist/Wishlist";
 import Calendar from "./src/screens/Calendar/Calendar";
 import Store from "./src/screens/Store/Store";
 import Settings from "./src/screens/Settings/Settings";
+import AdoptDetails from "./src/screens/AdoptDetails/AdoptDetails";
 
 const TabBottom = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -140,6 +141,7 @@ const App = () => {
       >
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="BottomTabs" component={BottomTabs} />
+        <Stack.Screen name="AdoptDetails" component={AdoptDetails} />
       </Stack.Navigator>
       <StatusBar style={"auto"} translucent={true} />
     </NavigationContainer>
