@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Image } from "react-native";
 import HeaderBoxStyle from "./HeaderBox.style.js";
 import { FontAwesome, Ionicons, AntDesign, Octicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Menu from "../Menu/Menu.js";
+import BellDrawer from "../BellDrawer/BellDrawer.js";
 
 const HeaderBox = (props) => {
   const [searchvalue, setSearchvalue] = useState("");
@@ -41,42 +43,50 @@ const HeaderBox = (props) => {
 
   return (
     <View style={HeaderBoxStyle.view}>
-      <View style={HeaderBoxStyle.headerbox}>
-        <View style={HeaderBoxStyle.headerboxline1}>
-          <Ionicons name="menu" size={40} />
-          <View style={{ justifyContent: "center" }}>
-            <Text style={HeaderBoxStyle.headerboxtxt}>AE</Text>
+      {screen == "home" && (
+        <>
+          <View style={HeaderBoxStyle.headerbox}>
+            <View style={HeaderBoxStyle.headerboxline1}>
+              <Menu />
+              <View style={{ justifyContent: "center" }}>
+                <Text style={HeaderBoxStyle.headerboxtxt}>AE</Text>
+              </View>
+              <View style={{ justifyContent: "center" }}>
+                <BellDrawer />
+              </View>
+            </View>
+            <View style={HeaderBoxStyle.headerboxline2}>
+              <AntDesign
+                name="search1"
+                size={25}
+                style={HeaderBoxStyle.searchlogo}
+              />
+              <TextInput
+                placeholder="Search"
+                value={searchvalue}
+                onChangeText={handleSearch}
+                style={HeaderBoxStyle.searchzone}
+              />
+            </View>
           </View>
-          <View style={{ justifyContent: "center" }}>
-            <Octicons name="bell" size={25} />
-          </View>
-        </View>
-        {screen == "home" && (
-          <View style={HeaderBoxStyle.headerboxline2}>
-            <AntDesign
-              name="search1"
-              size={25}
-              style={HeaderBoxStyle.searchlogo}
+        </>
+      )}
+      {screen == "adopt" && (
+        <>
+          <View style={HeaderBoxStyle.headerbox2}>
+            <View style={HeaderBoxStyle.headerboxline1}>
+              <Menu />
+              <View style={{ justifyContent: "center" }}>
+                <BellDrawer />
+              </View>
+            </View>
+            <Image
+              source={{ uri: selectedElement.image }}
+              style={HeaderBoxStyle.petImage}
             />
-            <TextInput
-              placeholder="Search"
-              value={searchvalue}
-              onChangeText={handleSearch}
-              style={HeaderBoxStyle.searchzone}
-            />
           </View>
-        )}
-        {screen == "adopt" && (
-          <View style={HeaderBoxStyle.headerboxline22}>
-            <Text style={HeaderBoxStyle.headerboxline22txt}>
-              Adopt this pet
-            </Text>
-            <Text style={HeaderBoxStyle.headerboxline22txt2}>
-              {selectedElement.name}
-            </Text>
-          </View>
-        )}
-      </View>
+        </>
+      )}
     </View>
   );
 };

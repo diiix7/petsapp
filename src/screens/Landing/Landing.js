@@ -1,7 +1,6 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import LandingStyle from "./Landing.style.js";
 import LottieView from "lottie-react-native";
-import { Button } from "@rneui/themed";
 import { useNavigation } from "@react-navigation/native";
 
 const Landing = (props) => {
@@ -26,14 +25,9 @@ const Landing = (props) => {
         />
       </View>
 
-      <Button
-        buttonStyle={LandingStyle.button}
-        uppercase={true}
-        color={"success"}
-        onPress={handleContinue}
-        //disabled={}
-        title={"GET STARTED"}
-      />
+      <Pressable onPress={handleContinue} style={LandingStyle.button}>
+        <Text style={LandingStyle.buttonLabel}>GET STARTED</Text>
+      </Pressable>
     </View>
   );
 };

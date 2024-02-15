@@ -22,7 +22,8 @@ const Home = (props) => {
   };
 
   // ip adress
-  const dataUrl = "http://192.168.0.158:3001/data";
+  // const dataUrl = "http://192.168.0.158:3001/data";
+  const dataUrl = "http://192.168.86.136:3001/data";
 
   // local data saved from server data
   const [localData, setLocalData] = useState([]);

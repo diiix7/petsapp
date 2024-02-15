@@ -15,6 +15,12 @@ const HeaderBoxStyle = StyleSheet.create({
     borderBottomRightRadius: 25,
     paddingHorizontal: wp("4"),
   },
+  headerbox2: {
+    backgroundColor: "chocolate",
+    width: "100%",
+    height: hp("45"),
+    paddingHorizontal: wp("4"),
+  },
   headerboxline1: {
     flexDirection: "row",
     top: 50,
@@ -49,6 +55,13 @@ const HeaderBoxStyle = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     top: 10,
+  },
+  petImage: {
+    width: wp("50"),
+    alignSelf: "center",
+    height: 220,
+    top: 50,
+    borderRadius: 8,
   },
 });
 export default HeaderBoxStyle;

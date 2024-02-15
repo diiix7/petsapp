@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, Pressable } from "react-native";
 import AdoptDetailsStyle from "./AdoptDetails.style.js";
 import { FontAwesome, Ionicons, AntDesign, Octicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import HeaderBox from "../../components/HeaderBox/HeaderBox.js";
 import { useRoute } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import img from "../../assets/images/image.jpeg";
 
 const AdoptDetails = (props) => {
   const route = useRoute();
@@ -31,28 +30,63 @@ const AdoptDetails = (props) => {
     fetchData();
   }, []);
 
+  const [wishlist, setWishlist] = useState(false);
+
   return (
     <View style={AdoptDetailsStyle.view}>
       <HeaderBox screenName="adopt" selectedItem={`${id}`} />
       <ScrollView style={AdoptDetailsStyle.main}>
-        <Image
-          source={{ uri: selectedElement.image }}
-          style={AdoptDetailsStyle.petImage}
-        />
         <View style={AdoptDetailsStyle.infosline}>
-          <View style={{ justifyContent: "center" }}>
-            <Text style={AdoptDetailsStyle.infotxt}>
-              Informations about this pet
-            </Text>
-          </View>
-          <Octicons name="archive" size={25} />
+          <Text style={AdoptDetailsStyle.infotxt}>{selectedElement.name}</Text>
         </View>
-        <View style={AdoptDetailsStyle.nameline}>
-          <Text style={AdoptDetailsStyle.nametxt}>Name: </Text>
-          <Text style={AdoptDetailsStyle.nametxt}>{selectedElement.name}</Text>
+        <Text style={AdoptDetailsStyle.period}>One month</Text>
+        <View style={AdoptDetailsStyle.adoptline}>
+          <Text style={AdoptDetailsStyle.adopttxt}>Adoption fees: </Text>
+          <Text style={AdoptDetailsStyle.adopttxt}>$ 220.0</Text>
+        </View>
+        <View style={AdoptDetailsStyle.infos2line}>
+          <Text style={AdoptDetailsStyle.infos2txt}>More Informations</Text>
+        </View>
+        <View style={AdoptDetailsStyle.infos3line}>
+          <Text style={AdoptDetailsStyle.infos3txt}>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.Lorem ipsum
+            dolor sit amet consectetur adipiscing elit.Lorem ipsum dolor sit
+            amet consectetur adipiscing elit.Lorem ipsum dolor sit amet
+            consectetur adipiscing elit.Lorem ipsum dolor sit amet consectetur
+            adipiscing elit.
+          </Text>
+        </View>
+        <View style={AdoptDetailsStyle.infos4line}>
+          <Pressable
+            onPress={() => setWishlist(!wishlist)}
+            style={AdoptDetailsStyle.like}
+          >
+            <AntDesign
+              name={"heart"}
+              size={30}
+              color={wishlist ? "chocolate" : "black"}
+            />
+          </Pressable>
+          <Pressable
+            onPress={() => setWishlist(!wishlist)}
+            style={[
+              AdoptDetailsStyle.liket,
+              wishlist ? AdoptDetailsStyle.back1 : AdoptDetailsStyle.back2,
+            ]}
+          >
+            <Text
+              style={[
+                AdoptDetailsStyle.liketxt,
+                wishlist ? AdoptDetailsStyle.back1 : AdoptDetailsStyle.back2,
+              ]}
+            >
+              ADD TO WISHLIST
+            </Text>
+          </Pressable>
         </View>
       </ScrollView>
     </View>
   );
 };
+
 export default AdoptDetails;

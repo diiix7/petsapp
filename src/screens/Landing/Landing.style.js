@@ -39,7 +39,7 @@ const LandingStyle = StyleSheet.create({
   },
   buttonLabel: {
     textAlign: "center",
-    fontSize: 26,
+    fontSize: 20,
     color: "white",
   },
 });
